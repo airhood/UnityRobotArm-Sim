@@ -241,7 +241,7 @@ Transform:
   m_GameObject: {fileID: 19461130}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15894,16 +15894,16 @@ MonoBehaviour:
       colorName: White
     - material: {fileID: 2100000, guid: 6565b98401d27004eaa197356137fdbf, type: 2}
       colorName: Yellow
-  workspaceX: {x: -0.3, y: 0.3}
+  workspaceX: {x: -0.35, y: 0.35}
   workspaceY: {x: 0.05, y: 0.25}
-  workspaceZ: {x: -0.3, y: 0.3}
+  workspaceZ: {x: -0.35, y: 0.35}
   tableY: 0
   tableThickness: 0.01
   tableColor: {r: 1, g: 1, b: 1, a: 1}
   useExclusionZone: 1
-  excludeRangeX: {x: -0.05, y: 0.05}
-  excludeRangeY: {x: 0, y: 0.05}
-  excludeRangeZ: {x: -0.05, y: 0.05}
+  excludeRangeX: {x: -0.07, y: 0.07}
+  excludeRangeY: {x: 0, y: 0.07}
+  excludeRangeZ: {x: -0.07, y: 0.07}
   maxSpawnRetries: 30
   preGraspClearance: 0.12
   graspHeight: 0.03

@@ -74,7 +74,6 @@ public class PickPlaceDemo : MonoBehaviour
     public Vector3 homePosition    = new Vector3(0f, 0.20f, 0.10f);
 
     [Header("Demo Settings")]
-    public int   episodesPerObject  = 100;
     public float reachThreshold     = 0.012f;
     public float reachTimeout       = 6f;
     public float gripperSettleTime  = 0.5f;
@@ -140,17 +139,16 @@ public class PickPlaceDemo : MonoBehaviour
     {
         yield return MoveArm(homePosition);
 
-        foreach (var p in prefabs)
+        int prefabIndex = 0;
+        while (true)
         {
-            for (int i = 0; i < episodesPerObject; i++)
-            {
-                yield return RunEpisode(p);
-                _episodeId++;
-                yield return new WaitForSeconds(episodeInterval);
-            }
-        }
+            var p = prefabs[prefabIndex % prefabs.Count];
+            prefabIndex++;
 
-        Debug.Log($"[PickPlaceDemo] 완료. 총 에피소드: {_episodeId}");
+            yield return RunEpisode(p);
+            _episodeId++;
+            yield return new WaitForSeconds(episodeInterval);
+        }
     }
 
     IEnumerator RunEpisode(PickablePrefab p)
@@ -342,11 +340,14 @@ public class PickPlaceDemo : MonoBehaviour
         Vector3 tableCenter = new Vector3(tableCX, absTableY - tableThickness * 0.5f, tableCZ);
         Vector3 tableSize   = new Vector3(workspaceX.y - workspaceX.x, tableThickness, workspaceZ.y - workspaceZ.x);
 
-        // 테이블 (마젠타) ────────────────────────────────────────────────
-        Gizmos.color = new Color(1f, 0f, 1f, 0.4f);
-        Gizmos.DrawCube(tableCenter, tableSize);
-        Gizmos.color = new Color(1f, 0f, 1f, 1f);
-        Gizmos.DrawWireCube(tableCenter, tableSize);
+        // 테이블 (마젠타) — 에디터 전용
+        if (!Application.isPlaying)
+        {
+            Gizmos.color = new Color(1f, 0f, 1f, 0.4f);
+            Gizmos.DrawCube(tableCenter, tableSize);
+            Gizmos.color = new Color(1f, 0f, 1f, 1f);
+            Gizmos.DrawWireCube(tableCenter, tableSize);
+        }
 
         // 워크스페이스 큐브 (초록색) ─────────────────────────────────────
         Vector3 wsCenter = new Vector3(cx, cy, cz);
