@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5066937034887583298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5863216639357170734}
+  - component: {fileID: 5409983088161840402}
+  - component: {fileID: 3539731068039618287}
+  - component: {fileID: 423934818243803803}
+  - component: {fileID: 6138922518881301742}
+  - component: {fileID: 8976859856450689233}
+  m_Layer: 0
+  m_Name: IK Test
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5863216639357170734
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066937034887583298}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.022062572, y: 0.11716824, z: -0.15680657}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5409983088161840402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066937034887583298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64de1ab18a7bd79458fd280a8b5511a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manipulator: {fileID: 0}
+  target: {fileID: 0}
+  rate: 3
+  pathGizmo: {fileID: 3539731068039618287}
+  center: {x: 0, y: 0, z: 0}
+  minRange: {x: 0.04, y: 0.1, z: 0.04}
+  maxRange: {x: 0.25, y: 0.3, z: 0.25}
+  dirX: 0
+  dirY: 1
+  dirZ: 0
+--- !u!114 &3539731068039618287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066937034887583298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec355015e66c4a5580e422fb260898b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manipulator: {fileID: 0}
+  maxPoints: 500
+  minDistance: 0.001
+  pathColor: {r: 0.2, g: 0.8, b: 1, a: 1}
+  dotRadius: 0.005
+--- !u!114 &423934818243803803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066937034887583298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81dd38b77af26c54398019d74f4a8105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  port: 5007
+  targetTransform: {fileID: 0}
+  ikReceiver: {fileID: 0}
+  gripper: {fileID: 0}
+--- !u!114 &6138922518881301742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066937034887583298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 281b10fca590bf941b3ddfb3e4c1338b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serverHost: 127.0.0.1
+  serverPort: 5006
+  captureCamera: {fileID: 0}
+  captureWidth: 224
+  captureHeight: 224
+  captureEveryNFrames: 3
+  jpegQuality: 85
+  ikReceiver: {fileID: 0}
+  gripper: {fileID: 0}
+  currentEpisodeId: -1
+  currentEpisodeLabel: 
+  currentPhase: 
+--- !u!114 &8976859856450689233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066937034887583298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a0e9721e6372234fb76a77d0762d910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ikReceiver: {fileID: 0}
+  aiCommandServer: {fileID: 423934818243803803}
+  endPoint: {fileID: 0}
+  gripper: {fileID: 0}
+  dataCollector: {fileID: 6138922518881301742}
+  prefabs: []
+  spawnRangeX: {x: -0.15, y: 0.15}
+  spawnRangeZ: {x: 0.08, y: 0.22}
+  tableY: 0.05
+  preGraspClearance: 0.12
+  graspHeight: 0.03
+  liftHeight: 0.18
+  homePosition: {x: 0, y: 0.2, z: 0.1}
+  episodesPerObject: 100
+  reachThreshold: 0.012
+  reachTimeout: 6
+  gripperSettleTime: 0.5
+  spawnSettleTime: 0.4
+  episodeInterval: 0.3
