@@ -70,6 +70,16 @@ public class Manipulator : MonoBehaviour
         ConfigureDynamixelXM430W350T();
     }
 
+    [Header("Joint Profile")]
+    public int  profileVelocity     = 100;
+    public int  profileAcceleration = 7;
+
+    [Header("Joint Synchronization")]
+    [Tooltip("모든 관절이 동시에 목표에 도달하도록 profileVelocity를 비례 조정")]
+    public bool  syncJoints       = true;
+    [Tooltip("이 각도(도) 이상 변화 시 동기화 재계산")]
+    public float syncTriggerDelta = 2f;
+
     void ConfigureDynamixelXM430W350T()
     {
         foreach (var actuatorInstance in actuatorInstances)
@@ -77,8 +87,8 @@ public class Manipulator : MonoBehaviour
             if (actuatorInstance is IActuatorProfile<DynamixelProfile> p)
             {
                 var config = p.GetProfile();
-                config.profileVelocity = 100;
-                config.profileAcceleration = 7;
+                config.profileVelocity     = profileVelocity;
+                config.profileAcceleration = profileAcceleration;
                 p.SetProfile(config);
             }
         }
