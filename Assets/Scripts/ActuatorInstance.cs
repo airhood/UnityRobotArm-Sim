@@ -21,6 +21,7 @@ public abstract class ActuatorInstance
     public void  SetInitialPosition(float position) => anglePosition       = position;
     public void  SetPosition(float position)        => targetAnglePosition = position;
     public float GetPosition()                      => anglePosition;
+    public float GetTargetPosition()                => targetAnglePosition;
 }
 
 public interface IActuatorProfile<TConfig> where TConfig : struct

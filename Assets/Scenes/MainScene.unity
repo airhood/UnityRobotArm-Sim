@@ -384,6 +384,50 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &368646512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 368646513}
+  - component: {fileID: 368646514}
+  m_Layer: 0
+  m_Name: Sim Core
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &368646513
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368646512}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &368646514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368646512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5a1e623d9e601428d145ae968feb4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,7 +548,7 @@ MonoBehaviour:
   m_ShadowRenderingLayers: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 1
+  m_SoftShadowQuality: 3
 --- !u!1 &754415850
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,6 +657,38 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &758557947
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 758557948}
+  m_Layer: 0
+  m_Name: Slider R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &758557948
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758557947}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0267}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8397691622253711815}
+  m_Father: {fileID: 691763715365050088}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,6 +738,140 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &902360448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 902360449}
+  m_Layer: 0
+  m_Name: Gripper Pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &902360449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902360448}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 691763715365050088}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1443207966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1443207967}
+  m_Layer: 0
+  m_Name: Slider L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1443207967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443207966}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0267}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3742552005759103197}
+  m_Father: {fileID: 691763715365050088}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2105699565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2105699567}
+  - component: {fileID: 2105699566}
+  - component: {fileID: 2105699568}
+  m_Layer: 0
+  m_Name: SBC
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2105699566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105699565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b10a2a9cf440e9a478294bc96006b6dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manipulator: {fileID: 3269977614089405249}
+  ikReceiver: {fileID: 2105699568}
+  profileVelocity: 100
+  profileAcceleration: 7
+  syncJoints: 1
+  syncTriggerDelta: 2
+--- !u!4 &2105699567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105699565}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2105699568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105699565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc3af6de57db2a40b165441fddd1a0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manipulator: {fileID: 3269977614089405249}
+  serverHost: 127.0.0.1
+  serverPort: 5005
+  reconnectDelay: 2
+  sendInterval: 0.02
+  positionThreshold: 0.0001
+  target: {fileID: 754415854}
+  endPoint: {fileID: 3774165624093129556}
 --- !u!33 &2335155931918970
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4648,10 +4858,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3774165624093129556}
+  - {fileID: 902360449}
   - {fileID: 3044356111975955084}
   - {fileID: 5182980923011735520}
-  - {fileID: 3742552005759103197}
-  - {fileID: 8397691622253711815}
+  - {fileID: 1443207967}
+  - {fileID: 758557948}
   - {fileID: 8580262945720823704}
   - {fileID: 1015509640662552740}
   - {fileID: 6121180743978136933}
@@ -4752,7 +4963,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3742552005759103197}
   m_Layer: 0
-  m_Name: Slider 1
+  m_Name: Position Pivot Setter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5268,7 +5479,7 @@ MonoBehaviour:
   captureHeight: 224
   captureEveryNFrames: 3
   jpegQuality: 85
-  ikReceiver: {fileID: 906501613606825181}
+  ikReceiver: {fileID: 0}
   gripper: {fileID: 2014569215350334108}
   currentEpisodeId: -1
   currentEpisodeLabel: 
@@ -5974,26 +6185,6 @@ Transform:
   - {fileID: 3314468124211717023}
   m_Father: {fileID: 7073778009152695048}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &906501613606825181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6973062802898074724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bc3af6de57db2a40b165441fddd1a0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manipulator: {fileID: 3269977614089405249}
-  serverHost: 127.0.0.1
-  serverPort: 5005
-  reconnectDelay: 2
-  sendInterval: 0.02
-  positionThreshold: 0.0001
-  target: {fileID: 754415854}
-  endPoint: {fileID: 3774165624093129556}
 --- !u!1 &908439550201286855
 GameObject:
   m_ObjectHideFlags: 0
@@ -7135,7 +7326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838974119076955847}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10321,7 +10512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8397691622253711815}
   m_Layer: 0
-  m_Name: Slider 2
+  m_Name: Position Pivot Setter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11541,7 +11732,7 @@ GameObject:
   - component: {fileID: 785294111909749867}
   - component: {fileID: 2540046883287713876}
   m_Layer: 0
-  m_Name: System
+  m_Name: Systems
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12561,14 +12752,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angleJoint: {fileID: 5513158691647135796}
-  connectingRod1: {fileID: 3261404260590089660}
-  connectingRod2: {fileID: 6170866454979829022}
-  slider1: {fileID: 3742552005759103197}
-  slider2: {fileID: 8397691622253711815}
+  connectingRodL: {fileID: 3261404260590089660}
+  connectingRodR: {fileID: 6170866454979829022}
+  sliderL: {fileID: 1443207967}
+  sliderR: {fileID: 758557948}
   crankRadius: 0.015
   connectingRodLength: 0.04
-  openAngle: -90
-  closeAngle: 0
+  openAngle: 0
+  closeAngle: -90
+  overrideAcceleration: 1
+  overrideAccelerationValue: 0
 --- !u!4 &2014649864113502283
 Transform:
   m_ObjectHideFlags: 0
@@ -15776,143 +15969,107 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a0e9721e6372234fb76a77d0762d910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ikReceiver: {fileID: 906501613606825181}
+  manipulator: {fileID: 3269977614089405249}
+  ikReceiver: {fileID: 2105699568}
   aiCommandServer: {fileID: 6500426184106551838}
-  endPoint: {fileID: 3774165624093129556}
-  gripper: {fileID: 2014569215350334108}
   dataCollector: {fileID: 785294111909749867}
   pathGizmo: {fileID: 7983650626442399338}
   prefabs:
   - prefab: {fileID: 2377555530216244110, guid: 1164ff76128b5c74cb9d983d0bbb103c, type: 3}
-    displayName: Object (Cube)
-    materials:
-    - material: {fileID: 2100000, guid: 781706af24113a342b65d8696d7fe9e7, type: 2}
-      colorName: Black
-    - material: {fileID: 2100000, guid: 2267d858a73005d49a24353209105fa8, type: 2}
-      colorName: Blue
-    - material: {fileID: 2100000, guid: a13ac8d9098315f4981d5691327f6248, type: 2}
-      colorName: Brown
-    - material: {fileID: 2100000, guid: b7ca464527ec6dd4f91197bf4c7a0daa, type: 2}
-      colorName: Cherry
-    - material: {fileID: 2100000, guid: 95912324bbf0a59459bfae1351f3ef45, type: 2}
-      colorName: Cyan
-    - material: {fileID: 2100000, guid: 237e122381476eb40b2f56f5b7fd06fa, type: 2}
-      colorName: Dark Blue
-    - material: {fileID: 2100000, guid: a47d52aef7c0713468b85035d667d677, type: 2}
-      colorName: Dark Green
-    - material: {fileID: 2100000, guid: cec8a9cbdddf059469f4f8fc92f6e8b0, type: 2}
-      colorName: Green
-    - material: {fileID: 2100000, guid: b0bc429e9c7daf44b846a20cfe423587, type: 2}
-      colorName: 
-    - material: {fileID: 2100000, guid: 901d791ca808d7d4f8c191123f63f672, type: 2}
-      colorName: Light Green
-    - material: {fileID: 2100000, guid: 4f9e625da6ba64c4080be5baf70c3d3a, type: 2}
-      colorName: Light Purple
-    - material: {fileID: 2100000, guid: a1aeb88ee6d5a384f985deebc93f3f6a, type: 2}
-      colorName: Orange
-    - material: {fileID: 2100000, guid: 62ec8536eb6a76341a5791209d9aef5b, type: 2}
-      colorName: Pink
-    - material: {fileID: 2100000, guid: 62ec8536eb6a76341a5791209d9aef5b, type: 2}
-      colorName: Pink
-    - material: {fileID: 2100000, guid: d1549cb8889ce564499c51cdabb51a33, type: 2}
-      colorName: Red
-    - material: {fileID: 2100000, guid: d1549cb8889ce564499c51cdabb51a33, type: 2}
-      colorName: Red
-    - material: {fileID: 2100000, guid: d1549cb8889ce564499c51cdabb51a33, type: 2}
-      colorName: Red
+    displayNames:
+    - cube
+    - box
+    - block
+    - object
+    - brick
+    materials: {fileID: 11400000, guid: 9a3a0d93ad28dbb44af4619e0d2f27e3, type: 2}
   - prefab: {fileID: 2142528955687845769, guid: 12084f89e211c144392f3653abb6003b, type: 3}
-    displayName: Object (Cylinder)
-    materials:
-    - material: {fileID: 2100000, guid: 781706af24113a342b65d8696d7fe9e7, type: 2}
-      colorName: Black
-    - material: {fileID: 2100000, guid: 2267d858a73005d49a24353209105fa8, type: 2}
-      colorName: Blue
-    - material: {fileID: 2100000, guid: a13ac8d9098315f4981d5691327f6248, type: 2}
-      colorName: Brown
-    - material: {fileID: 2100000, guid: b7ca464527ec6dd4f91197bf4c7a0daa, type: 2}
-      colorName: Cherry
-    - material: {fileID: 2100000, guid: 95912324bbf0a59459bfae1351f3ef45, type: 2}
-      colorName: Cyan
-    - material: {fileID: 2100000, guid: 237e122381476eb40b2f56f5b7fd06fa, type: 2}
-      colorName: Dark Blue
-    - material: {fileID: 2100000, guid: a47d52aef7c0713468b85035d667d677, type: 2}
-      colorName: Dark Green
-    - material: {fileID: 2100000, guid: cec8a9cbdddf059469f4f8fc92f6e8b0, type: 2}
-      colorName: Green
-    - material: {fileID: 2100000, guid: b0bc429e9c7daf44b846a20cfe423587, type: 2}
-      colorName: Grey
-    - material: {fileID: 2100000, guid: 901d791ca808d7d4f8c191123f63f672, type: 2}
-      colorName: Light Green
-    - material: {fileID: 2100000, guid: 4f9e625da6ba64c4080be5baf70c3d3a, type: 2}
-      colorName: Light Purple
-    - material: {fileID: 2100000, guid: a1aeb88ee6d5a384f985deebc93f3f6a, type: 2}
-      colorName: Orange
-    - material: {fileID: 2100000, guid: 62ec8536eb6a76341a5791209d9aef5b, type: 2}
-      colorName: Pink
-    - material: {fileID: 2100000, guid: 753bf0e17f4f5dd4e87d9a74a746736e, type: 2}
-      colorName: Purple
-    - material: {fileID: 2100000, guid: d1549cb8889ce564499c51cdabb51a33, type: 2}
-      colorName: Red
-    - material: {fileID: 2100000, guid: 8038c80cb6d13604681a92f1517cbdfa, type: 2}
-      colorName: White
-    - material: {fileID: 2100000, guid: 6565b98401d27004eaa197356137fdbf, type: 2}
-      colorName: Yellow
+    displayNames:
+    - cylinder
+    - tube
+    - rod
+    - can
+    materials: {fileID: 11400000, guid: 9a3a0d93ad28dbb44af4619e0d2f27e3, type: 2}
   - prefab: {fileID: 3727712716276170749, guid: 6fbac74da1fea014ca581774bbf75112, type: 3}
-    displayName: Object (Sphere)
-    materials:
-    - material: {fileID: 2100000, guid: 781706af24113a342b65d8696d7fe9e7, type: 2}
-      colorName: Black
-    - material: {fileID: 2100000, guid: 2267d858a73005d49a24353209105fa8, type: 2}
-      colorName: Blue
-    - material: {fileID: 2100000, guid: a13ac8d9098315f4981d5691327f6248, type: 2}
-      colorName: Brown
-    - material: {fileID: 2100000, guid: b7ca464527ec6dd4f91197bf4c7a0daa, type: 2}
-      colorName: Cherry
-    - material: {fileID: 2100000, guid: 95912324bbf0a59459bfae1351f3ef45, type: 2}
-      colorName: Cyan
-    - material: {fileID: 2100000, guid: 237e122381476eb40b2f56f5b7fd06fa, type: 2}
-      colorName: Dark Blue
-    - material: {fileID: 2100000, guid: a47d52aef7c0713468b85035d667d677, type: 2}
-      colorName: Dark Green
-    - material: {fileID: 2100000, guid: cec8a9cbdddf059469f4f8fc92f6e8b0, type: 2}
-      colorName: Green
-    - material: {fileID: 2100000, guid: b0bc429e9c7daf44b846a20cfe423587, type: 2}
-      colorName: Grey
-    - material: {fileID: 2100000, guid: 901d791ca808d7d4f8c191123f63f672, type: 2}
-      colorName: Light Green
-    - material: {fileID: 2100000, guid: 4f9e625da6ba64c4080be5baf70c3d3a, type: 2}
-      colorName: Light Purple
-    - material: {fileID: 2100000, guid: a1aeb88ee6d5a384f985deebc93f3f6a, type: 2}
-      colorName: Orange
-    - material: {fileID: 2100000, guid: 62ec8536eb6a76341a5791209d9aef5b, type: 2}
-      colorName: Pink
-    - material: {fileID: 2100000, guid: 753bf0e17f4f5dd4e87d9a74a746736e, type: 2}
-      colorName: Purple
-    - material: {fileID: 2100000, guid: d1549cb8889ce564499c51cdabb51a33, type: 2}
-      colorName: Red
-    - material: {fileID: 2100000, guid: 8038c80cb6d13604681a92f1517cbdfa, type: 2}
-      colorName: White
-    - material: {fileID: 2100000, guid: 6565b98401d27004eaa197356137fdbf, type: 2}
-      colorName: Yellow
+    displayNames:
+    - sphere
+    - ball
+    - round object
+    - globe
+    - round peice
+    materials: {fileID: 11400000, guid: 9a3a0d93ad28dbb44af4619e0d2f27e3, type: 2}
+  zonePrefabs:
+  - prefab: {fileID: 3591190459894562900, guid: dddbded955b77294aa7cc03eae968098, type: 3}
+    displayNames:
+    - circle
+    - round plate
+    - disc
+    - circulare pad
+    - round spot
+    - ring
+    - round trey
+    materials: {fileID: 11400000, guid: 6cc5ecd058c88a54c829344af03b8a40, type: 2}
+  - prefab: {fileID: 3445306009821856421, guid: 2883d9f1adaf3aa418f3bc000047018e, type: 3}
+    displayNames:
+    - square
+    - square plate
+    - square pad
+    - square spot
+    - trey
+    - rectangular plate
+    materials: {fileID: 11400000, guid: 6cc5ecd058c88a54c829344af03b8a40, type: 2}
+  - prefab: {fileID: 3842898837019210631, guid: 236c76f39ebece74abb81d3567610db5, type: 3}
+    displayNames:
+    - triangle
+    - triangular plate
+    - triangular trey
+    - triangular pad
+    - triangle spot
+    materials: {fileID: 11400000, guid: 6cc5ecd058c88a54c829344af03b8a40, type: 2}
   workspaceX: {x: -0.35, y: 0.35}
   workspaceY: {x: 0.05, y: 0.25}
   workspaceZ: {x: -0.35, y: 0.35}
   tableY: 0
   tableThickness: 0.01
   tableColor: {r: 1, g: 1, b: 1, a: 1}
+  promptTemplates:
+  - pick up the {0} and place it on the {1}
+  - grab the {0} and put it on the {1}
+  - move the {0} onto the {1}
+  - take the {0} and set it on the {1}
+  - place the {0} on the {1}
+  - bring the {0} to the {1}
+  - put the {0} on the {1}
+  - lift the {0} and drop it on the {1}
+  - carry the {0} to the {1}
+  - move the {0} to the {1}
+  - take the {0} over to the {1}
+  - drop the {0} at the {1}
+  - leave the {0} at the {1}
+  - set the {0} down at the {1}
+  - slide the {0} onto the {1}
+  - transfer the {0} to the {1}
+  - relocate the {0} to the {1}
+  - put the {0} down on the {1}
+  - pick the {0} up and bring it to the {1}
+  - grab the {0} and carry it to the {1}
+  - take the {0} and move it to the {1}
+  - pick the {0} up and move it onto the {1}
+  - get the {0} and place it at the {1}
+  minSpawnDistance: 0.07
+  maxSpawnRetries: 30
   useExclusionZone: 1
   excludeRangeX: {x: -0.07, y: 0.07}
   excludeRangeY: {x: 0, y: 0.07}
   excludeRangeZ: {x: -0.07, y: 0.07}
-  maxSpawnRetries: 30
   preGraspClearance: 0.12
   graspHeight: 0.03
   liftHeight: 0.18
+  placeHeight: 0.03
   homePosition: {x: 0, y: 0.2, z: 0.1}
-  episodesPerObject: 100
   reachThreshold: 0.012
   reachTimeout: 6
-  gripperSettleTime: 0.5
+  gripperPostDelay: 0.2
   spawnSettleTime: 0.4
   episodeInterval: 0.3
   attachDistance: 0.04
@@ -20199,6 +20356,15 @@ MonoBehaviour:
       axis: 0
       angle: 0
     endEffector: {fileID: 0}
+  - type: 1
+    link:
+      linkLength: 0
+      weight: 0
+    joint: {fileID: 5513158691647135796}
+    fixedAngleJoint:
+      axis: 0
+      angle: 0
+    endEffector: {fileID: 0}
   - type: 3
     link:
       linkLength: 0
@@ -20208,9 +20374,8 @@ MonoBehaviour:
       axis: 0
       angle: 0
     endEffector: {fileID: 2014569215350334108}
-  IKReceiver: {fileID: 906501613606825181}
-  controlMode: 1
   endPoint: {fileID: 3774165624093129556}
+  gripperPivot: {fileID: 902360449}
 --- !u!1 &3271074509166121062
 GameObject:
   m_ObjectHideFlags: 0
@@ -23422,12 +23587,12 @@ Transform:
   m_GameObject: {fileID: 693767223130182200}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 26.7}
+  m_LocalPosition: {x: 0, y: 0, z: 26.7267}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6110530285416880242}
-  m_Father: {fileID: 691763715365050088}
+  m_Father: {fileID: 1443207967}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &3748780860180920207
 MeshRenderer:
@@ -39253,8 +39418,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   port: 5007
   targetTransform: {fileID: 754415854}
-  ikReceiver: {fileID: 906501613606825181}
-  gripper: {fileID: 2014569215350334108}
+  manipulator: {fileID: 3269977614089405249}
+  ikReceiver: {fileID: 2105699568}
 --- !u!4 &6500632523464991291
 Transform:
   m_ObjectHideFlags: 0
@@ -42141,9 +42306,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6752585344547246955}
   - component: {fileID: 3269977614089405249}
-  - component: {fileID: 906501613606825181}
   m_Layer: 0
-  m_Name: rm-x52 5-axis manipulator
+  m_Name: Manipulator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46368,7 +46532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6170866454979829022}
   m_Layer: 0
-  m_Name: Connecting Rod 2
+  m_Name: Connecting Rod R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49572,7 +49736,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3261404260590089660}
   m_Layer: 0
-  m_Name: Connecting Rod 1
+  m_Name: Connecting Rod L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50620,12 +50784,12 @@ Transform:
   m_GameObject: {fileID: 1635491718044336443}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -26.7}
+  m_LocalPosition: {x: 0, y: 0, z: -26.7267}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1825217328495522108}
-  m_Father: {fileID: 691763715365050088}
+  m_Father: {fileID: 758557948}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &8400896235772068276
 Transform:
@@ -55420,4 +55584,6 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 754415854}
   - {fileID: 6752585344547246955}
+  - {fileID: 2105699567}
+  - {fileID: 368646513}
   - {fileID: 1047769902939497643}

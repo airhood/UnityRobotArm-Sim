@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b621daee86e9d24f8a76c0862c94a84, type: 3}
+  m_Name: Zone Material Set
+  m_EditorClassIdentifier: 
+  materials:
+  - material: {fileID: 2100000, guid: 8ea1152410bb9e24d93004a7a739317e, type: 2}
+    colorName: Black
+  - material: {fileID: 2100000, guid: 7dc64e4a0c984204a85b717ef476d4c8, type: 2}
+    colorName: blue
+  - material: {fileID: 2100000, guid: 4e70a4b75940192439a7a35eccf72b5a, type: 2}
+    colorName: brown
+  - material: {fileID: 2100000, guid: fdf28e8da1ab3bb4a9c6db56a5a313b0, type: 2}
+    colorName: cherry
+  - material: {fileID: 2100000, guid: 60f80b4c4006f94468a5a19cdd8d0e6d, type: 2}
+    colorName: cyan
+  - material: {fileID: 2100000, guid: b206fbc0568c6ba4e8c0bb89645efe31, type: 2}
+    colorName: dark blue
+  - material: {fileID: 2100000, guid: 1fb740a46b716fa49aa5a5e9f5ea08ba, type: 2}
+    colorName: dark green
+  - material: {fileID: 2100000, guid: b47f0771e03fbb24cb85a8940a05ec7b, type: 2}
+    colorName: green
+  - material: {fileID: 2100000, guid: 431f23882b775764e8bae581637f8736, type: 2}
+    colorName: grey
+  - material: {fileID: 2100000, guid: d0a53ab49679437418e6f58326384ba6, type: 2}
+    colorName: light green
+  - material: {fileID: 2100000, guid: 9d2cc037c8566444298692e0b156c6f2, type: 2}
+    colorName: light purple
+  - material: {fileID: 2100000, guid: 4be3d1313f51bc64c836ff377dfb850c, type: 2}
+    colorName: orange
+  - material: {fileID: 2100000, guid: a3318c0feb027194fa41a1de07e8e7aa, type: 2}
+    colorName: pink
+  - material: {fileID: 2100000, guid: 62b6afb5e64241a42a68c6bd4e7f47b2, type: 2}
+    colorName: purple
+  - material: {fileID: 2100000, guid: f6e8ad5c3c41e214aa2e9b134728c8dc, type: 2}
+    colorName: red
+  - material: {fileID: 2100000, guid: 9193cf8bc8c05064c812eae5db3ea3b6, type: 2}
+    colorName: yellow

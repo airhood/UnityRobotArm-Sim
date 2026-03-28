@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using System.Net.Sockets;
 using System.IO;
@@ -30,7 +29,10 @@ public class IKReceiver : MonoBehaviour
     public Transform target;
     public Transform endPoint;
 
-    private float[] _lastSyncAngles;
+    void Start()
+    {
+        StartReceiver();
+    }
 
     public void StartReceiver()
     {
@@ -173,88 +175,28 @@ public class IKReceiver : MonoBehaviour
 
     void Update()
     {
-        if (manipulator.controlMode != Manipulator.ControlMode.IKReceiver) return;
+        if (!isConnected || target == null || stream == null) return;
 
-        if (isConnected && target != null && stream != null)
+        Vector3 relativePos = target.position - manipulator.transform.position;
+        bool positionChanged = Vector3.Distance(relativePos, lastSentPosition) > positionThreshold;
+
+        sendTimer += Time.deltaTime;
+        if (positionChanged && sendTimer >= sendInterval)
         {
-            Vector3 targetPos = target.position;
-            Vector3 manipulatorPos = manipulator.transform.position;
-            Vector3 relativePos = targetPos - manipulatorPos;
-            bool positionChanged = Vector3.Distance(relativePos, lastSentPosition) > positionThreshold;
+            sendTimer = 0f;
+            lastSentPosition = relativePos;
 
-            sendTimer += Time.deltaTime;
-            if (positionChanged && sendTimer >= sendInterval)
+            string message = $"{relativePos.x:F4},{relativePos.y:F4},{relativePos.z:F4}\n";
+            try
             {
-                sendTimer = 0f;
-                lastSentPosition = relativePos;
-
-                string message = $"{relativePos.x:F4},{relativePos.y:F4},{relativePos.z:F4}\n";
-                try
-                {
-                    byte[] data = System.Text.Encoding.UTF8.GetBytes(message);
-                    stream.Write(data, 0, data.Length);
-                }
-                catch (Exception e)
-                {
-                    Debug.LogWarning($"Send failed: {e.Message}");
-                    CleanupConnection();
-                }
+                byte[] data = System.Text.Encoding.UTF8.GetBytes(message);
+                stream.Write(data, 0, data.Length);
             }
-        }
-        
-        if (latestAngles == null) return;
-
-        List<ActuatorInstance> actuatorInstances = manipulator.GetActuatorInstances();
-
-        // ── Joint Synchronization ────────────────────────────────────────────
-        // IK 타겟이 새 위치로 이동할 때 각 관절의 이동 각도 비율에 맞게
-        // profileVelocity를 스케일링하여 모든 관절이 동시에 도달하도록 한다.
-        if (manipulator.syncJoints)
-        {
-            bool triggered = _lastSyncAngles == null;
-            if (!triggered && _lastSyncAngles != null)
+            catch (Exception e)
             {
-                float maxChange = 0f;
-                for (int i = 0; i < latestAngles.Length && i < _lastSyncAngles.Length; i++)
-                    maxChange = Mathf.Max(maxChange, Mathf.Abs(latestAngles[i] - _lastSyncAngles[i]));
-                triggered = maxChange > manipulator.syncTriggerDelta;
+                Debug.LogWarning($"Send failed: {e.Message}");
+                CleanupConnection();
             }
-
-            if (triggered)
-            {
-                _lastSyncAngles = (float[])latestAngles.Clone();
-
-                float maxDelta = 0f;
-                float[] deltas = new float[actuatorInstances.Count];
-                for (int i = 0; i < actuatorInstances.Count && i < latestAngles.Length; i++)
-                {
-                    float d = Mathf.Abs(latestAngles[i] - actuatorInstances[i].GetPosition());
-                    if (d > 180f) d = 360f - d;
-                    deltas[i] = d;
-                    if (d > maxDelta) maxDelta = d;
-                }
-
-                if (maxDelta > 0.5f)
-                {
-                    for (int i = 0; i < actuatorInstances.Count; i++)
-                    {
-                        if (actuatorInstances[i] is IActuatorProfile<DynamixelProfile> p)
-                        {
-                            float scale = deltas[i] / maxDelta;
-                            var prof = p.GetProfile();
-                            prof.profileVelocity     = Mathf.Max(1, Mathf.RoundToInt(manipulator.profileVelocity     * scale));
-                            prof.profileAcceleration = Mathf.Max(1, Mathf.RoundToInt(manipulator.profileAcceleration * scale));
-                            p.SetProfile(prof);
-                        }
-                    }
-                }
-            }
-        }
-        // ────────────────────────────────────────────────────────────────────
-
-        for (int i = 0; i < actuatorInstances.Count && i < latestAngles.Length; i++)
-        {
-            actuatorInstances[i].SetPosition(latestAngles[i]);
         }
     }
 
@@ -291,4 +233,5 @@ public class IKReceiver : MonoBehaviour
             GUI.Label(new Rect(x, 90, width, 20), $"Distance: {dist:F1} mm");
         }
     }
+
 }

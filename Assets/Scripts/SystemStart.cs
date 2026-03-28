@@ -10,11 +10,6 @@ public static class IKReceiverSettings
     public static int serverPort;
 }
 
-public static class ManipulatorModeSetting
-{
-    public static Manipulator.ControlMode controlMode;
-}
-
 public class SystemStart : MonoBehaviour
 {
     [SerializeField] private TMP_InputField serverHostInputField;
@@ -68,7 +63,6 @@ public class SystemStart : MonoBehaviour
     
         IKReceiverSettings.serverHost = serverHost;
         IKReceiverSettings.serverPort = port;
-        ManipulatorModeSetting.controlMode = Manipulator.ControlMode.IKReceiver;
         SceneManager.LoadScene("MainScene");
     }
 
@@ -87,7 +81,6 @@ public class SystemStart : MonoBehaviour
 
     public void Manual()
     {
-        ManipulatorModeSetting.controlMode = Manipulator.ControlMode.Manual;
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("ManualScene");
     }
 }

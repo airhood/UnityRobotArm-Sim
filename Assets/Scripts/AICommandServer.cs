@@ -28,8 +28,8 @@ public class AICommandServer : MonoBehaviour
 
     [Header("References")]
     public Transform targetTransform;
+    public Manipulator manipulator;
     public IKReceiver ikReceiver;
-    public SliderGripper gripper;
 
     private ConcurrentQueue<Action> _mainQueue = new ConcurrentQueue<Action>();
     private TcpListener _listener;
@@ -159,7 +159,7 @@ public class AICommandServer : MonoBehaviour
                     bool open = parts[1].ToLower().StartsWith("open");
                     _mainQueue.Enqueue(() =>
                     {
-                        gripper?.SetGripperOpen(open);
+                        manipulator.SetGripperOpen(open);
                         Send(stream, "OK\n");
                     });
                 }
@@ -178,12 +178,10 @@ public class AICommandServer : MonoBehaviour
 
     private string BuildState()
     {
-        float[] j = ikReceiver?.LastJointAngles;
-        string joints = j != null
-            ? string.Join(",", Array.ConvertAll(j, a => a.ToString("F2")))
-            : "0,0,0,0,0";
+        float[] j = manipulator.GetCurrentJointAngles();
+        string joints = string.Join(",", Array.ConvertAll(j, a => a.ToString("F2")));
 
-        Vector3 ee = ikReceiver?.endPoint != null ? ikReceiver.endPoint.position : Vector3.zero;
+        Vector3 ee  = manipulator.endPoint.position;
         Vector3 tgt = targetTransform != null ? targetTransform.position : Vector3.zero;
 
         return $"STATE {joints},{ee.x:F4},{ee.y:F4},{ee.z:F4},{tgt.x:F4},{tgt.y:F4},{tgt.z:F4}\n";

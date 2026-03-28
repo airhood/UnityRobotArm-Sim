@@ -130,64 +130,8 @@ public class ManipulatorEditor : Editor
 
         EditorGUILayout.Space();
         
-        EditorGUILayout.PropertyField(serializedObject.FindProperty("IKReceiver"));
-        
-        EditorGUILayout.PropertyField(serializedObject.FindProperty("controlMode"));
-
         EditorGUILayout.PropertyField(serializedObject.FindProperty("endPoint"));
-        
-        if (manipulator.controlMode == Manipulator.ControlMode.Manual && Application.isPlaying)
-        {
-            EditorGUILayout.Space();
-            EditorGUILayout.LabelField("Manual Joint Control", EditorStyles.boldLabel);
-            
-            var actuatorInstances = manipulator.GetActuatorInstances();
-            
-            for (int i = 0; i < actuatorInstances.Count; i++)
-            {
-                EditorGUILayout.BeginVertical(EditorStyles.helpBox);
-                
-                float targetAngle = manipulator.GetManualAngle(i);
-                float currentAngle = actuatorInstances[i].GetPosition();
-                
-                AngleJoint joint = null;
-                foreach (var config in manipulator.config)
-                {
-                    if (config.type == Manipulator.ConfigType.Joint && 
-                        config.joint != null && 
-                        config.joint.GetActuatorInstance() == actuatorInstances[i])
-                    {
-                        joint = config.joint;
-                        break;
-                    }
-                }
-                
-                float minAngle = -180f;
-                float maxAngle = 180f;
-                
-                if (joint != null && joint.axisConfig.hasLimits)
-                {
-                    minAngle = joint.axisConfig.minAngle;
-                    maxAngle = joint.axisConfig.maxAngle;
-                }
-                
-                EditorGUILayout.LabelField($"Joint {i} - Target: {targetAngle:F2}° Current: {currentAngle:F2}°", EditorStyles.boldLabel);
-                float newAngle = EditorGUILayout.Slider("Target Angle", targetAngle, minAngle, maxAngle);
-                
-                if (!Mathf.Approximately(newAngle, targetAngle))
-                {
-                    manipulator.SetManualAngle(i, newAngle);
-                }
-                
-                EditorGUILayout.EndVertical();
-            }
-            
-            if (Application.isPlaying)
-            {
-                EditorUtility.SetDirty(target);
-                Repaint();
-            }
-        }
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("gripperPivot"));
         
         serializedObject.ApplyModifiedProperties();
         

@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b621daee86e9d24f8a76c0862c94a84, type: 3}
+  m_Name: Object Material Set
+  m_EditorClassIdentifier: 
+  materials:
+  - material: {fileID: 2100000, guid: 781706af24113a342b65d8696d7fe9e7, type: 2}
+    colorName: black
+  - material: {fileID: 2100000, guid: 2267d858a73005d49a24353209105fa8, type: 2}
+    colorName: blue
+  - material: {fileID: 2100000, guid: a13ac8d9098315f4981d5691327f6248, type: 2}
+    colorName: brown
+  - material: {fileID: 2100000, guid: b7ca464527ec6dd4f91197bf4c7a0daa, type: 2}
+    colorName: cherry
+  - material: {fileID: 2100000, guid: 95912324bbf0a59459bfae1351f3ef45, type: 2}
+    colorName: cyan
+  - material: {fileID: 2100000, guid: 237e122381476eb40b2f56f5b7fd06fa, type: 2}
+    colorName: dark blue
+  - material: {fileID: 2100000, guid: a47d52aef7c0713468b85035d667d677, type: 2}
+    colorName: dark green
+  - material: {fileID: 2100000, guid: cec8a9cbdddf059469f4f8fc92f6e8b0, type: 2}
+    colorName: green
+  - material: {fileID: 2100000, guid: b0bc429e9c7daf44b846a20cfe423587, type: 2}
+    colorName: grey
+  - material: {fileID: 2100000, guid: 901d791ca808d7d4f8c191123f63f672, type: 2}
+    colorName: light green
+  - material: {fileID: 2100000, guid: 4f9e625da6ba64c4080be5baf70c3d3a, type: 2}
+    colorName: light purple
+  - material: {fileID: 2100000, guid: a1aeb88ee6d5a384f985deebc93f3f6a, type: 2}
+    colorName: orange
+  - material: {fileID: 2100000, guid: 62ec8536eb6a76341a5791209d9aef5b, type: 2}
+    colorName: pink
+  - material: {fileID: 2100000, guid: 753bf0e17f4f5dd4e87d9a74a746736e, type: 2}
+    colorName: purple
+  - material: {fileID: 2100000, guid: d1549cb8889ce564499c51cdabb51a33, type: 2}
+    colorName: red
+  - material: {fileID: 2100000, guid: 6565b98401d27004eaa197356137fdbf, type: 2}
+    colorName: yellow
