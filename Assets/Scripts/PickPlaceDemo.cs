@@ -95,11 +95,13 @@ public class PickPlaceDemo : MonoBehaviour
     public Vector2 excludeRangeZ    = new Vector2( 0.00f,  0.08f);
 
     [Header("Motion Parameters")]
-    public float preGraspClearance = 0.12f;
-    public float graspHeight       = 0.03f;
-    public float liftHeight        = 0.18f;
-    public float placeHeight       = 0.03f;
-    public Vector3 homePosition    = new Vector3(0f, 0.20f, 0.10f);
+    public float preGraspClearance  = 0.12f;
+    public float graspHeight        = 0.03f;
+    public float liftHeight         = 0.18f;
+    public float placeHeight        = 0.03f;
+    [Tooltip("물체를 내려놓을 때 pivot 위에 추가 여유 높이 (collider 끼임 방지)")]
+    public float placeHeightOffset  = 0.005f;
+    public Vector3 homePosition     = new Vector3(0f, 0.20f, 0.10f);
 
     [Header("Demo Settings")]
     public float reachThreshold    = 0.012f;
@@ -256,7 +258,7 @@ public class PickPlaceDemo : MonoBehaviour
 
         // 8. Lower to place height — end effector stops so object bottom lands on zone pivot
         dataCollector?.SetPhase("lower_to_zone");
-        yield return MoveArm(new Vector3(zonePos.x, zonePos.y + _objBottomOffset, zonePos.z));
+        yield return MoveArm(new Vector3(zonePos.x, zonePos.y + _objBottomOffset + placeHeightOffset, zonePos.z));
 
         // 9. Release
         dataCollector?.SetPhase("release");
